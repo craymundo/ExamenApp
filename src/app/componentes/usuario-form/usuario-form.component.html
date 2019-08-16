@@ -1,0 +1,77 @@
+<div class="container" style="padding-top: 1%;padding-bottom: 1%" >
+    <button class="btn btn-primary" (click)="regresar()">Regresar</button>
+</div>
+<div class="container" *ngIf="respuesta==''">
+    <form name="form" #f="ngForm" (ngSubmit)="processForm()" style="padding-top:
+        1%">
+        <div class="form group">
+            <input type="hidden" name="id" #id="ngModel" class="form-control"
+                [(ngModel)]="user.id">
+        </div>
+        <div class="form group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" #nombre="ngModel"
+                placeholder="Ingrese su Nombre"
+                class="form-control" [(ngModel)]="user.nombre">
+        </div>
+        <div class="form group">
+            <label for="apellidopat">Apellido Paterno:</label>
+            <input type="text" name="apellidopat" #apellidopat="ngModel"
+                placeholder="Ingrese su Apellido Paterno"
+                class="form-control" [(ngModel)]="user.apellidopat">
+        </div>
+        <div class="form group">
+            <label for="apellidomat">Apellido Materno:</label>
+            <input type="text" name="apellidomat" #apellidomat="ngModel"
+                placeholder="Ingrese su Apellido Materno"
+                class="form-control" [(ngModel)]="user.apellidomat">
+        </div>
+
+        <div class="form group">
+            <label for="email">Email:</label>
+            <input type="text" name="email" #email="ngModel"
+                placeholder="Ingrese su Email"
+                class="form-control" [(ngModel)]="user.email">
+        </div>
+
+
+        <div class="form group">
+            <label for="fchnac">Fecha Nacimiento:</label>
+            <input type="text" name="fchnac" #fchnac="ngModel"
+                placeholder="dd/mm/yyyy"
+                class="form-control datepicker" [(ngModel)]="user.fchnac">
+        </div>
+
+
+        <div class="form group">
+            <label for="fchingreso">Fecha Ingreso:</label>
+            <input type="text" name="fchingreso" #fchingreso="ngModel"
+                placeholder="dd/mm/yyyy"
+                class="form-control datepicker" [(ngModel)]="user.fchingreso">
+        </div>
+
+
+        <div class="form group" style="padding-top: 1%">
+            <input type="submit" value="Guardar" class="btn btn-success">
+        </div>
+    </form>
+</div>
+
+<div class="container"  *ngIf="respuesta!=''">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>RESPUESTA</h1>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <pre>
+                {{respuesta}}
+            </pre>
+        </div>
+    </div>
+
+
+</div>
